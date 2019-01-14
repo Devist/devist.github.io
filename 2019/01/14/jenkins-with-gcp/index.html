@@ -21,7 +21,7 @@
 <meta property="og:description" content="Google cloud Platform에 무료 VM(리눅스 Centos7)을 할당 받아서 Gitlab, Jenkins, Webpack, Mocha를 연동하여 CI/CD를 해보려고 한다. 전문 분야는 아니지만 한 번 직접 구축해보는 것도 좋은 경험이 될 것 같다. 오늘의 목표는 Google Cloud Platform(이하 GCP)에 VM 인스턴스(Centos">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103">
-<meta property="og:updated_time" content="2019-01-14T12:38:03.209Z">
+<meta property="og:updated_time" content="2019-01-14T12:39:40.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins with GCP_설치">
 <meta name="twitter:description" content="Google cloud Platform에 무료 VM(리눅스 Centos7)을 할당 받아서 Gitlab, Jenkins, Webpack, Mocha를 연동하여 CI/CD를 해보려고 한다. 전문 분야는 아니지만 한 번 직접 구축해보는 것도 좋은 경험이 될 것 같다. 오늘의 목표는 Google Cloud Platform(이하 GCP)에 VM 인스턴스(Centos">
@@ -185,9 +185,7 @@
 <p>오늘의 목표는 Google Cloud Platform(이하 GCP)에 VM 인스턴스(Centos7)를 생성하고, Jenkins를 설치하여 실행해 보는 것이다.</p>
 <p>Step1. GCP에 Centos7 VM 인스턴스 생성</p>
 <h3 id="What-is-Jenkins"><a href="#What-is-Jenkins" class="headerlink" title="What is Jenkins?"></a>What is Jenkins?</h3><p>Jenkins는 소프트웨어를 작성, 테스트 및 배포하거나 배포하는 것과 관련된 모든 종류의 작업을 자동화하는 데 사용할 수 있는 오픈 소스 자동화 서버이다. Jenkins는 기본 시스템 패키지 인 Docker에 설치하거나 Java Runtime Environment (JRE)가 설치된 모든 시스템에서 독립 실행 형으로 실행할 수도 있다. - <a href="https://jenkins.io/doc/" target="_blank" rel="noopener">Jenkins User Documentation</a></p>
-<h2 id="Step-1-GCP-에-Centos7-VM-인스턴스-생성"><a href="#Step-1-GCP-에-Centos7-VM-인스턴스-생성" class="headerlink" title="Step 1. GCP 에 Centos7 VM 인스턴스 생성"></a>Step 1. GCP 에 Centos7 VM 인스턴스 생성</h2><h3 id="a-GCP-프로젝트-생성"><a href="#a-GCP-프로젝트-생성" class="headerlink" title="a. GCP 프로젝트 생성"></a>a. GCP 프로젝트 생성</h3><blockquote>
-<p> <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">https://console.cloud.google.com</a> 에 접속하여 로그인 후, 상단의 [프로젝트 선택]을 클릭하고 [새 프로젝트] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103" alt="img"></p>
-</blockquote>
+<h2 id="Step-1-GCP-에-Centos7-VM-인스턴스-생성"><a href="#Step-1-GCP-에-Centos7-VM-인스턴스-생성" class="headerlink" title="Step 1. GCP 에 Centos7 VM 인스턴스 생성"></a>Step 1. GCP 에 Centos7 VM 인스턴스 생성</h2><h3 id="a-GCP-프로젝트-생성"><a href="#a-GCP-프로젝트-생성" class="headerlink" title="a. GCP 프로젝트 생성"></a>a. GCP 프로젝트 생성</h3><p> <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">https://console.cloud.google.com</a> 에 접속하여 로그인 후, 상단의 [프로젝트 선택]을 클릭하고 [새 프로젝트] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103" alt="img"></p>
 <blockquote>
 <p>프로젝트 이름 입력 후, ‘’만들기’’를 클릭하여 프로젝트 생성을 완료한다.<img src="https://t1.daumcdn.net/cfile/tistory/9967864D5C398D1E0F" alt="img"></p>
 </blockquote>
@@ -328,7 +326,7 @@
 
 
 
-    <a data-url="https://devist.github.io/2019/01/14/jenkins-with-gcp/" data-id="cjqwbdsak000jpiyjlifnlbqc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://devist.github.io/2019/01/14/jenkins-with-gcp/" data-id="cjqwbfs4n000jvjyj65t8qk0x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
