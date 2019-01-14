@@ -20,12 +20,12 @@
 <meta property="og:site_name" content="오동환">
 <meta property="og:description" content="Google cloud Platform에 무료 VM(리눅스 Centos7)을 할당 받아서 Gitlab, Jenkins, Webpack, Mocha를 연동하여 CI/CD를 해보려고 한다. 전문 분야는 아니지만 한 번 직접 구축해보는 것도 좋은 경험이 될 것 같다. 오늘의 목표는 Google Cloud Platform(이하 GCP)에 VM 인스턴스(Centos">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103">
-<meta property="og:updated_time" content="2019-01-14T12:39:40.082Z">
+<meta property="og:image" content="https://t1.daumcdn.net/cfile/tistory/992599445C398EC40D">
+<meta property="og:updated_time" content="2019-01-14T12:53:51.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins with GCP_설치">
 <meta name="twitter:description" content="Google cloud Platform에 무료 VM(리눅스 Centos7)을 할당 받아서 Gitlab, Jenkins, Webpack, Mocha를 연동하여 CI/CD를 해보려고 한다. 전문 분야는 아니지만 한 번 직접 구축해보는 것도 좋은 경험이 될 것 같다. 오늘의 목표는 Google Cloud Platform(이하 GCP)에 VM 인스턴스(Centos">
-<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103">
+<meta name="twitter:image" content="https://t1.daumcdn.net/cfile/tistory/992599445C398EC40D">
     
 
     
@@ -183,59 +183,45 @@
         <div class="article-entry" itemprop="articleBody">
             <p>Google cloud Platform에 무료 VM(리눅스 Centos7)을 할당 받아서 Gitlab, Jenkins, Webpack, Mocha를 연동하여 CI/CD를 해보려고 한다. 전문 분야는 아니지만 한 번 직접 구축해보는 것도 좋은 경험이 될 것 같다.</p>
 <p>오늘의 목표는 Google Cloud Platform(이하 GCP)에 VM 인스턴스(Centos7)를 생성하고, Jenkins를 설치하여 실행해 보는 것이다.</p>
-<p>Step1. GCP에 Centos7 VM 인스턴스 생성</p>
+<ul>
+<li>Step1. GCP에 Centos7 VM 인스턴스 생성</li>
+<li>Step2. JDK 설치</li>
+<li>Step3. Maven 설치</li>
+<li>Step4. Jenkins 설치</li>
+</ul>
 <h3 id="What-is-Jenkins"><a href="#What-is-Jenkins" class="headerlink" title="What is Jenkins?"></a>What is Jenkins?</h3><p>Jenkins는 소프트웨어를 작성, 테스트 및 배포하거나 배포하는 것과 관련된 모든 종류의 작업을 자동화하는 데 사용할 수 있는 오픈 소스 자동화 서버이다. Jenkins는 기본 시스템 패키지 인 Docker에 설치하거나 Java Runtime Environment (JRE)가 설치된 모든 시스템에서 독립 실행 형으로 실행할 수도 있다. - <a href="https://jenkins.io/doc/" target="_blank" rel="noopener">Jenkins User Documentation</a></p>
-<h2 id="Step-1-GCP-에-Centos7-VM-인스턴스-생성"><a href="#Step-1-GCP-에-Centos7-VM-인스턴스-생성" class="headerlink" title="Step 1. GCP 에 Centos7 VM 인스턴스 생성"></a>Step 1. GCP 에 Centos7 VM 인스턴스 생성</h2><h3 id="a-GCP-프로젝트-생성"><a href="#a-GCP-프로젝트-생성" class="headerlink" title="a. GCP 프로젝트 생성"></a>a. GCP 프로젝트 생성</h3><p> <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">https://console.cloud.google.com</a> 에 접속하여 로그인 후, 상단의 [프로젝트 선택]을 클릭하고 [새 프로젝트] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103" alt="img"></p>
-<blockquote>
-<p>프로젝트 이름 입력 후, ‘’만들기’’를 클릭하여 프로젝트 생성을 완료한다.<img src="https://t1.daumcdn.net/cfile/tistory/9967864D5C398D1E0F" alt="img"></p>
-</blockquote>
-<h3 id="b-VM-인스턴스-생성"><a href="#b-VM-인스턴스-생성" class="headerlink" title="b. VM 인스턴스 생성"></a>b. VM 인스턴스 생성</h3><blockquote>
-<p>왼쪽 상단 메뉴 클릭 &gt; Computer Engine &gt; VM 인스턴스를 클릭한 후, <strong>[ +인스턴스 만들기]</strong> 버튼을 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99F8C14A5C398D2D0E" alt="img"></p>
-</blockquote>
-<blockquote>
-<p>인스턴스 만들기 페이지에서, 머신 유형을 초소형(무료임)을 선택하고, 부팅디스크는 CentOS7을 선택한다. 나머지는 다 기본 설정으로 건들지 않고, 하단의 <strong>만들기</strong> 버튼을 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99E159485C398D3F0F" alt="img"></p>
-</blockquote>
-<blockquote>
-<p>다음과 같이 인스턴스가 만들어진다.<img src="https://t1.daumcdn.net/cfile/tistory/99F7DF4A5C398D4902" alt="img"></p>
-</blockquote>
-<h2 id="Step2-Jenkins-설치-위한-사전-준비-JDK-설치"><a href="#Step2-Jenkins-설치-위한-사전-준비-JDK-설치" class="headerlink" title="Step2. Jenkins 설치 위한 사전 준비_JDK 설치"></a>Step2. Jenkins 설치 위한 사전 준비_JDK 설치</h2><p>젠킨스를 사용하려면 jdk와 메이븐이 CentOs에 먼저 설치되어 있어야 한다고 한다. 먼저 CentOS 인스턴스에 JDK를 설치한다. 다음과 같이 SSH 연결에서 브라우저 창에서 열기를 클릭하여 Step1에서 생성한 인스턴스에 SSH로 접속하기 위한 클라우드 터미널을 연다. <img src="https://t1.daumcdn.net/cfile/tistory/9907D14E5C398DAD0C" alt="img"></p>
-<p><img src="https://t1.daumcdn.net/cfile/tistory/9985C64E5C398DAD0F" alt="img"></p>
-<h3 id="a-JDK-설치"><a href="#a-JDK-설치" class="headerlink" title="a. JDK 설치"></a>a. JDK 설치</h3><blockquote>
-<p>쉘에 아래 명령어를 입력하여 openJDK 1.8 버전을 설치한다.</p>
-</blockquote>
+<p><br>   </p>
+<h1 id="Step-1-GCP-에-Centos7-VM-인스턴스-생성"><a href="#Step-1-GCP-에-Centos7-VM-인스턴스-생성" class="headerlink" title="Step 1. GCP 에 Centos7 VM 인스턴스 생성"></a>Step 1. GCP 에 Centos7 VM 인스턴스 생성</h1><h3 id="a-GCP-프로젝트-생성"><a href="#a-GCP-프로젝트-생성" class="headerlink" title="a. GCP 프로젝트 생성"></a>a. GCP 프로젝트 생성</h3><p> <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">https://console.cloud.google.com</a> 에 접속하여 로그인 후, 상단의 [프로젝트 선택]을 클릭하고 [새 프로젝트] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103" alt=""></p>
+<p>프로젝트 이름 입력 후, ‘’만들기’’를 클릭하여 프로젝트 생성을 완료한다.<img src="https://t1.daumcdn.net/cfile/tistory/9967864D5C398D1E0F" alt=""></p>
+<h3 id="b-VM-인스턴스-생성"><a href="#b-VM-인스턴스-생성" class="headerlink" title="b. VM 인스턴스 생성"></a>b. VM 인스턴스 생성</h3><p>왼쪽 상단 메뉴 클릭 &gt; Computer Engine &gt; VM 인스턴스를 클릭한 후, <strong>[ +인스턴스 만들기]</strong> 버튼을 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99F8C14A5C398D2D0E" alt=""></p>
+<p>인스턴스 만들기 페이지에서, 머신 유형을 초소형(무료임)을 선택하고, 부팅디스크는 CentOS7을 선택한다. 나머지는 다 기본 설정으로 건들지 않고, 하단의 <strong>만들기</strong> 버튼을 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99E159485C398D3F0F" alt=""></p>
+<p>다음과 같이 인스턴스가 만들어진다.<img src="https://t1.daumcdn.net/cfile/tistory/99F7DF4A5C398D4902" alt=""></p>
+<p><br></p>
+<p><br> </p>
+<h1 id="Step2-사전-준비-JDK-설치"><a href="#Step2-사전-준비-JDK-설치" class="headerlink" title="Step2. 사전 준비_JDK 설치"></a>Step2. 사전 준비_JDK 설치</h1><p>젠킨스를 사용하려면 jdk와 메이븐이 CentOs에 먼저 설치되어 있어야 한다고 한다. 먼저 CentOS 인스턴스에 JDK를 설치한다. 다음과 같이 SSH 연결에서 브라우저 창에서 열기를 클릭하여 Step1에서 생성한 인스턴스에 SSH로 접속하기 위한 클라우드 터미널을 연다. <img src="https://t1.daumcdn.net/cfile/tistory/9907D14E5C398DAD0C" alt=""></p>
+<p><img src="https://t1.daumcdn.net/cfile/tistory/9985C64E5C398DAD0F" alt=""></p>
+<h3 id="a-JDK-설치"><a href="#a-JDK-설치" class="headerlink" title="a. JDK 설치"></a>a. JDK 설치</h3><p>쉘에 아래 명령어를 입력하여 openJDK 1.8 버전을 설치한다.</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install java-<span class="number">1.8</span>.<span class="number">0</span>-openjdk-devel.x86_64</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p> 아래 명령어를 입력하여 설치 결과를 확인한다.</p>
-</blockquote>
+<p>아래 명령어를 입력하여 설치 결과를 확인한다.</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ javac -version</span><br><span class="line">javac <span class="number">1.8</span>.<span class="number">0</span>_191</span><br></pre></td></tr></table></figure>
 <h3 id="b-JDK-환경-변수-설정"><a href="#b-JDK-환경-변수-설정" class="headerlink" title="b. JDK 환경 변수 설정"></a>b. JDK 환경 변수 설정</h3><p><strong>JAVA_HOME 확인</strong></p>
-<blockquote>
 <p>처음엔 JAVA_HOME에 아무런 값이 없다.</p>
-</blockquote>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ehco <span class="variable">$JAVA_HOME</span></span><br><span class="line"></span><br><span class="line">$</span><br></pre></td></tr></table></figure>
 <p><strong>JAVA 위치 확인</strong></p>
-<blockquote>
 <p>환경변수를 설정하기 위해 javac의 위치를 확인한다. which 명령어로 javac 명령어의 위치를 찾는다. 이 때 찾은 위치는 심볼릭 링크이기 때문에, 원본 파일 위치를 찾기 위해서 readlink 명령어를 사용한다. 여기서 /bin/javac 이전까지의 경로가 JAVA_HOME이 된다.</p>
-</blockquote>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ which javac</span><br><span class="line">/usr/bin/javac</span><br><span class="line">$ readlink -f /usr/bin/javac</span><br><span class="line">/usr/lib/jvm/java-<span class="number">1.8</span>.<span class="number">0</span>-openjdk-<span class="number">1.8</span>.<span class="number">0.191</span>.b12-<span class="number">1</span>.el7_6.x86_64/bin/javac</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
 <p><strong>JAVA_HOME 설정</strong></p>
-<blockquote>
 <p>환경변수를 설정하는 profile 파일을 vi 편집기로 연다.</p>
-</blockquote>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/profile</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>파일의 가장 밑에 아래 내용 추가한 후 저장한다.</p>
-</blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>source 명령어를 이용해서 수정한 파일을 적용한다.</p>
-</blockquote>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ source /etc/profile</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>마지막으로, 제대로 적용되었는지 확인한다.</p>
-</blockquote>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ echo <span class="variable">$JAVA_HOME</span></span><br><span class="line">/usr/lib/jvm/java-<span class="number">1.8</span>.<span class="number">0</span>-openjdk-<span class="number">1.8</span>.<span class="number">0.191</span>.b12-<span class="number">1</span>.el7_6.x86_64</span><br><span class="line">$ <span class="variable">$JAVA_HOME</span>/bin/javac -version</span><br><span class="line">javac <span class="number">1.8</span>.<span class="number">0</span>_191</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
-<h2 id="Step3-Jenkins-설치-위한-사전-준비-maven-메이븐-설치"><a href="#Step3-Jenkins-설치-위한-사전-준비-maven-메이븐-설치" class="headerlink" title="Step3. Jenkins 설치 위한 사전 준비_maven(메이븐) 설치"></a>Step3. Jenkins 설치 위한 사전 준비_maven(메이븐) 설치</h2><p>이제 Maven이라는 빌드 도구를 설치한다.</p>
+<p> <br></p>
+<p><br></p>
+<h1 id="Step3-사전-준비-maven-메이븐-설치"><a href="#Step3-사전-준비-maven-메이븐-설치" class="headerlink" title="Step3. 사전 준비_maven(메이븐) 설치"></a>Step3. 사전 준비_maven(메이븐) 설치</h1><p>이제 Maven이라는 빌드 도구를 설치한다.</p>
 <p>사전준비로, 먼저 wget (웹 서버로부터 콘텐츠를 가져오는 프로그램, 명령어)을 설치한다.</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install wget -y</span><br></pre></td></tr></table></figure>
 <p><strong>메이븐 설치</strong></p>
@@ -252,73 +238,39 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ source /etc/profile.d/maven.sh</span><br></pre></td></tr></table></figure>
 <p>적용이 제대로 되었는지 확인한다.</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mvn -version</span><br></pre></td></tr></table></figure>
-<h2 id="Step4-Jenkins-젠킨스-설치"><a href="#Step4-Jenkins-젠킨스-설치" class="headerlink" title="Step4. Jenkins(젠킨스) 설치"></a>Step4. Jenkins(젠킨스) 설치</h2><h3 id="a-GCP-구글-클라우드-플랫폼-방화벽-설정"><a href="#a-GCP-구글-클라우드-플랫폼-방화벽-설정" class="headerlink" title="a. GCP(구글 클라우드 플랫폼) 방화벽 설정"></a>a. GCP(구글 클라우드 플랫폼) 방화벽 설정</h3><blockquote>
-<p>JDK, Mave을 설치했으니 이제 드디어 jenkins를 설치할 차례다.</p>
+<p>  <br></p>
+<p><br></p>
+<h1 id="Step4-Jenkins-젠킨스-설치"><a href="#Step4-Jenkins-젠킨스-설치" class="headerlink" title="Step4. Jenkins(젠킨스) 설치"></a>Step4. Jenkins(젠킨스) 설치</h1><h3 id="a-GCP-구글-클라우드-플랫폼-방화벽-설정"><a href="#a-GCP-구글-클라우드-플랫폼-방화벽-설정" class="headerlink" title="a. GCP(구글 클라우드 플랫폼) 방화벽 설정"></a>a. GCP(구글 클라우드 플랫폼) 방화벽 설정</h3><p>JDK, Mave을 설치했으니 이제 드디어 jenkins를 설치할 차례다.</p>
 <p>그러나 먼저 해줘야할 일이 있다. VM instance 방화벽을 설정하는 것이다. 구글 클라우드 플랫폼은 VM 외부에 방화벽이 있으며, vm 내부의 os가 아닌 vm 외부에서 방화벽 설정을 제대로 해줘야 원하는 포트를 사용할 수 있다. 클라이언트가 브라우저로 jenkins를 접속할 수 있도록 하기 위해, 먼저 방화벽을 설정하도록 한다.</p>
-<p>아래처럼 나의 인스턴스 목록에서, 사용하는 인스턴스의 [네트워크 세부정보 보기] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/995E7B4C5C398E340E" alt="img"></p>
-</blockquote>
-<blockquote>
-<p>이후 [방화벽 규칙] -&gt; [방화벽 규칙 만들기] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99435E4C5C398E3515" alt="img"></p>
-</blockquote>
-<blockquote>
-<p>다음과 같이 설정하여 8080 포트를 사용할 수 있도록 한다.<img src="https://t1.daumcdn.net/cfile/tistory/9992CE4C5C398E3613" alt="img"></p>
-</blockquote>
-<blockquote>
-<p>방화벽 규칙이 제대로 만들어졌나 확인한다.<img src="https://t1.daumcdn.net/cfile/tistory/99691D4C5C398E3714" alt="img"></p>
-</blockquote>
-<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="b-젠킨스-설치"><a href="#b-젠킨스-설치" class="headerlink" title="b. 젠킨스 설치"></a>b. 젠킨스 설치</h3><blockquote>
-<p>방화벽 설정이 마무리 되었으니 이제 설치를 해 볼 차례다. 먼저 Jenkins 설치를 위한 yum 레파지토리를 설정한다.</p>
-</blockquote>
+<p>아래처럼 나의 인스턴스 목록에서, 사용하는 인스턴스의 [네트워크 세부정보 보기] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/995E7B4C5C398E340E" alt=""></p>
+<p>이후 [방화벽 규칙] -&gt; [방화벽 규칙 만들기] 를 클릭한다.<img src="https://t1.daumcdn.net/cfile/tistory/99435E4C5C398E3515" alt=""></p>
+<p>다음과 같이 설정하여 8080 포트를 사용할 수 있도록 한다.<img src="https://t1.daumcdn.net/cfile/tistory/9992CE4C5C398E3613" alt=""></p>
+<p>방화벽 규칙이 제대로 만들어졌나 확인한다.<img src="https://t1.daumcdn.net/cfile/tistory/99691D4C5C398E3714" alt=""></p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><h3 id="b-젠킨스-설치"><a href="#b-젠킨스-설치" class="headerlink" title="b. 젠킨스 설치"></a>b. 젠킨스 설치</h3><p>방화벽 설정이 마무리 되었으니 이제 설치를 해 볼 차례다. 먼저 Jenkins 설치를 위한 yum 레파지토리를 설정한다.</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo</span><br><span class="line">$ sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>젠킨스를 설치한다.</p>
-</blockquote>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install jenkins</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>포트 설정을 위해 jenkins 파일을 연다.</p>
-</blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo vi /etc/sysconfig/jenkins</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>포트를 변경한다. 나 같은 경우는 디폴트 포트인 8080을 이용한다.</p>
-</blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JENKINS_PORT="8080"</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>아까 GCP의 VM 외부에서 방화벽 설정을 했으나, 혹시 모르니 내부에서 한번 더 방화벽을 설정해준다.</p>
-</blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo firewall-cmd --permanent --zone=public --add-port=9090/tcp</span><br><span class="line"><span class="meta">$</span> sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<h3 id="c-젠킨스-명령어"><a href="#c-젠킨스-명령어" class="headerlink" title="c. 젠킨스 명령어"></a>c. 젠킨스 명령어</h3><blockquote>
-<p>Jenkins 시작</p>
-</blockquote>
+<h3 id="c-젠킨스-명령어"><a href="#c-젠킨스-명령어" class="headerlink" title="c. 젠킨스 명령어"></a>c. 젠킨스 명령어</h3><p>Jenkins 시작</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service jenkins start</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>Jenkins 종료</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service jenkins stop</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>Jenkins 재시작</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service jenkins restart</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p>CentOs에서 젠킨스를 항상 실행하게 설정</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable jenkins</span><br></pre></td></tr></table></figure>
-<h3 id="d-브라우저로-젠킨스에-접속하기"><a href="#d-브라우저로-젠킨스에-접속하기" class="headerlink" title="d. 브라우저로 젠킨스에 접속하기"></a>d. 브라우저로 젠킨스에 접속하기</h3><blockquote>
-<p>먼저 service jenkins start로 젠킨스를 동작시키고, 웹 브라우저로 접속해본다.</p>
-<p>접속 주소는 <strong>http://외부 IP:8080</strong> 입니다.<img src="https://t1.daumcdn.net/cfile/tistory/9987E54F5C398E960F" alt="img"></p>
-</blockquote>
-<blockquote>
-<p>다음과 같이 최초 화면이 뜬다면 성공입니다.<img src="https://t1.daumcdn.net/cfile/tistory/9964874F5C398E9833" alt="img"></p>
-</blockquote>
-<blockquote>
+<h3 id="d-브라우저로-젠킨스에-접속하기"><a href="#d-브라우저로-젠킨스에-접속하기" class="headerlink" title="d. 브라우저로 젠킨스에 접속하기"></a>d. 브라우저로 젠킨스에 접속하기</h3><p>먼저 service jenkins start로 젠킨스를 동작시키고, 웹 브라우저로 접속해본다.</p>
+<p>접속 주소는 <strong>http://외부 IP:8080</strong> 이다.<img src="https://t1.daumcdn.net/cfile/tistory/9987E54F5C398E960F" alt=""></p>
+<p>다음과 같이 최초 화면이 뜬다면 성공.<img src="https://t1.daumcdn.net/cfile/tistory/9964874F5C398E9833" alt=""></p>
 <p>Administrator password에는 다음의 명령어로 확인되는 코드를 입력해준다.</p>
-</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>코드 입력 후 continue 를 누르면 다음의 화면이 나오는데, 젠킨스는 다양한 기능등릉 플러그인으로 제공하지만, 일단 여기서는 install suggested plugins로 설치를 진행하고 마무리한다.<img src="https://t1.daumcdn.net/cfile/tistory/993357435C398EB314" alt="img"></p>
-</blockquote>
-<blockquote>
-<p>설치 완료!<img src="https://t1.daumcdn.net/cfile/tistory/992599445C398EC40D" alt="img"></p>
-</blockquote>
+<p>코드 입력 후 continue 를 누르면 다음의 화면이 나오는데, 젠킨스는 다양한 기능등릉 플러그인으로 제공하지만, 일단 여기서는 install suggested plugins로 설치를 진행하고 마무리한다.<img src="https://t1.daumcdn.net/cfile/tistory/993357435C398EB314" alt=""></p>
+<p>설치 완료!<img src="https://t1.daumcdn.net/cfile/tistory/992599445C398EC40D" alt=""></p>
 
         </div>
         <footer class="article-footer">
@@ -326,7 +278,7 @@
 
 
 
-    <a data-url="https://devist.github.io/2019/01/14/jenkins-with-gcp/" data-id="cjqwbfs4n000jvjyj65t8qk0x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://devist.github.io/2019/01/14/jenkins-with-gcp/" data-id="cjqwby10l000jscyj8qgz4uu0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -397,7 +349,7 @@
             "name": "DongHwan"
         },
         "headline": "Jenkins with GCP_설치",
-        "image": "https://devist.github.iohttps://t1.daumcdn.net/cfile/tistory/99C752485C398D1103",
+        "image": "https://devist.github.iohttps://t1.daumcdn.net/cfile/tistory/992599445C398EC40D",
         "keywords": "jenkins gcp ci cd",
         "genre": "Cloud CI/CD",
         "datePublished": "2019-01-14",
@@ -538,7 +490,7 @@
                             <a href="/2019/01/14/jenkins-with-gcp/" class="thumbnail">
     
     
-        <span style="background-image:url(https://t1.daumcdn.net/cfile/tistory/99C752485C398D1103)" alt="Jenkins with GCP_설치" class="thumbnail-image"></span>
+        <span style="background-image:url(https://t1.daumcdn.net/cfile/tistory/992599445C398EC40D)" alt="Jenkins with GCP_설치" class="thumbnail-image"></span>
     
     
 </a>
