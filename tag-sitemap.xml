@@ -31,15 +31,22 @@
     </url>
 
     <url>
-        <loc>https://devist.github.io/tags/esdoc/</loc>
-        <lastmod>2019-01-15T14:57:07.389Z</lastmod>
+        <loc>https://devist.github.io/tags/javascript/</loc>
+        <lastmod>2019-01-16T11:52:37.577Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://devist.github.io/tags/jsdoc/</loc>
-        <lastmod>2019-01-15T14:57:07.389Z</lastmod>
+        <lastmod>2019-01-16T11:52:37.577Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://devist.github.io/tags/esdoc/</loc>
+        <lastmod>2019-01-16T11:52:37.577Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
