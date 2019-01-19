@@ -6,22 +6,28 @@
     
 
     
-    <title>Category: CLOUD | 오동환</title>
+    <title>Jenkins with GCP_Gitlab 연동 | 오동환</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="For the man better than yesterday">
-<meta property="og:type" content="website">
-<meta property="og:title" content="오동환">
-<meta property="og:url" content="https://devist.github.io/categories/cloud/index.html">
-<meta property="og:site_name" content="오동환">
-<meta property="og:description" content="For the man better than yesterday">
-<meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="오동환">
-<meta name="twitter:description" content="For the man better than yesterday">
+        <meta name="keywords" content="GCP,JENKINS,CD,CI,GoogleCloudPlatform,gitlab,git">
     
-    <link rel="canonical" href="https://devist.github.io/categories/cloud/">
+    <meta name="description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x">
+<meta name="keywords" content="GCP,JENKINS,CD,CI,GoogleCloudPlatform,gitlab,git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins with GCP_Gitlab 연동">
+<meta property="og:url" content="https://devist.github.io/2019/01/19/jenkins-with-gitlab/index.html">
+<meta property="og:site_name" content="오동환">
+<meta property="og:description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://devist.github.io/2019/01/19/jenkins-with-gitlab/gitlab.jpg">
+<meta property="og:updated_time" content="2019-01-19T07:41:29.299Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jenkins with GCP_Gitlab 연동">
+<meta name="twitter:description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x">
+<meta name="twitter:image" content="https://devist.github.io/2019/01/19/jenkins-with-gitlab/gitlab.jpg">
+    
+    <link rel="canonical" href="https://devist.github.io/2019/01/19/jenkins-with-gitlab/">
 
     
         <link rel="alternate" href="/" title="오동환" type="application/atom+xml">
@@ -149,77 +155,175 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">CLOUD</em>
+    <a class="page-title-link" href="/categories/cloud/">CLOUD</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/cloud/ci-cd/">CI/CD</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-jenkins-with-gitlab" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/01/19/jenkins-with-gitlab/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/2019/01/19/jenkins-with-gitlab/gitlab.jpg)" alt="Jenkins with GCP_Gitlab 연동" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://devist.github.io/2019/01/19/jenkins-with-gitlab/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/cloud/">CLOUD</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/cloud/ci-cd/">CI/CD</a>
-            </div>
-            <div class="date"><time datetime="2019-01-19T06:58:52.000Z" itemprop="datePublished">2019-01-19</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/01/19/jenkins-with-gitlab/">Jenkins with GCP_Gitlab 연동</a>
+        Jenkins with GCP_Gitlab 연동
         </h1>
     
 
-        <p class="article-excerpt">
-            저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/01/19/jenkins-with-gitlab/" class="article-date">
+            <time datetime="2019-01-19T06:58:52.000Z" itemprop="datePublished">2019-01-19</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/cd/">CD</a>, <a class="tag-link" href="/tags/ci/">CI</a>, <a class="tag-link" href="/tags/gcp/">GCP</a>, <a class="tag-link" href="/tags/googlecloudplatform/">GoogleCloudPlatform</a>, <a class="tag-link" href="/tags/jenkins/">JENKINS</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/gitlab/">gitlab</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>저번 포스팅에서는 <a href="https://devist.github.io/2019/01/14/jenkins-with-gcp/">Centos7에 젠킨스를 설치</a>했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.</p>
+<p><br></p>
+<h1 id="Step1-git-설치"><a href="#Step1-git-설치" class="headerlink" title="Step1. git 설치"></a>Step1. git 설치</h1><p>먼저 Git을 설치하기 위해, Repository를 설정한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br></pre></td></tr></table></figure>
+<p>Git을 설치한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install git</span><br></pre></td></tr></table></figure>
+<p>정상적으로 설치되었는지 버전을 확인한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<h1 id="Step2-gitlab-설치"><a href="#Step2-gitlab-설치" class="headerlink" title="Step2. gitlab 설치"></a>Step2. gitlab 설치</h1><p><a href="https://about.gitlab.com/install/#centos-7" target="_blank" rel="noopener">https://about.gitlab.com/install/#centos-7</a> 를 따라하되, 포트 설정만 변경해준다. 톰캣 등 기본적으로 8080 포트를 많이 사용하는데 gitlab 의 기본 설정 또한 마찬가지로 8080 포트를 사용하고 있기 때문이다. 나는 9090으로 변경할 예정이다.</p>
+<p>시스템 방화벽에서 HTTP 및 SSH 액세스가 가능하도록 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install -y curl policycoreutils-python openssh-server</span><br><span class="line">$ sudo systemctl enable sshd</span><br><span class="line">$ sudo systemctl start sshd</span><br><span class="line"></span><br><span class="line">$ sudo firewall-cmd --permanent --add-service=http</span><br><span class="line">$ sudo systemctl reload firewalld</span><br></pre></td></tr></table></figure>
+<p>알림용 이메일 사용을 위해 다음을 실행한다. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install postfix</span><br><span class="line">$ sudo systemctl enable postfix</span><br><span class="line">$ sudo systemctl start postfix</span><br></pre></td></tr></table></figure>
+<p>Gitlab package repository를 설정한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash</span><br></pre></td></tr></table></figure>
+<p>Gitlab을 설치한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install gitlab-ee</span><br></pre></td></tr></table></figure>
+<p>Gitlab 포트를 변경하기 위하여 gitlab 설정 파일을 vi 에디터로 연다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/gitlab/gitlab.rb</span><br></pre></td></tr></table></figure>
+<p><br>먼저 웹사이트 주소의 포트를 사용할 포트로 변경하기 위해 external_url 변수를 수정한다. 나 같은 경우는 기본 80 포트를 사용할 것이기 때문에 포트 번호를 명시하지 않았다.<img src="/2019/01/19/jenkins-with-gitlab/external_url.png"></p>
+<p><br>인증과 unicorn 관련하여 포트가 8080으로 되어 있는 부분을 9090 포트로 변경하려고 한다. 내부적인 인증과 관련된 포트이므로 방화벽 해제할 필요는 없다. 먼저 auth_backend를 9090포트로 변경한다.<img src="/2019/01/19/jenkins-with-gitlab/auth_backend.png"></p>
+<p><br>이후 unicorn_port를 9090으로 변경하고 :wq로 저장하여 나온다..<img src="/2019/01/19/jenkins-with-gitlab/unicorn_port.png"></p>
+<p><br>설정을 적용시키기 위해 다음의 명령을 실행해본다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure>
+<p><br>이후 웹브라우저를 열고 외부 접속 URL에 접속해보면 정상적으로 동작하는 것을 확인할 수 있다. root의 비밀번호를 설정해준다.<img src="/2019/01/19/jenkins-with-gitlab/gitlab.png"></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://devist.github.io/2019/01/19/jenkins-with-gitlab/" data-id="cjr35zjq30000j7yj154ty96h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "DongHwan"
+        },
+        "headline": "Jenkins with GCP_Gitlab 연동",
+        "image": "https://devist.github.io/2019/01/19/jenkins-with-gitlab/gitlab.jpg",
+        "keywords": "GCP JENKINS CD CI GoogleCloudPlatform gitlab git",
+        "genre": "CLOUD CI/CD",
+        "datePublished": "2019-01-19",
+        "dateCreated": "2019-01-19",
+        "dateModified": "2019-01-19",
+        "url": "https://devist.github.io/2019/01/19/jenkins-with-gitlab/",
+        "description": "저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.
 
 Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다.
-1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x
-        </p>
-    </div>
+1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x"
+        "wordCount": 300
+    }
+</script>
+
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
 
@@ -265,6 +369,19 @@ Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다.
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/01/16/how-to-use-jsdoc/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">JSDoc 설치 및 사용방법 | JavaDoc과 비슷한 JSDoc으로 자바스크립트 문서화</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -457,11 +574,13 @@ Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다.
     var disqus_shortname = 'donghwan';
     
     
+    var disqus_url = 'https://devist.github.io/2019/01/19/jenkins-with-gitlab/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

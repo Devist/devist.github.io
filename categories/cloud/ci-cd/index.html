@@ -94,7 +94,7 @@ ga('send', 'pageview');
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/cloud/">Cloud</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/cloud/ci-cd/">CI/CD</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/frontend/">Frontend</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/frontend/etc/">Etc</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/log/">Log</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/log/year/">Year</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/review/">Review</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/review/books/">Books</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/review/movies/">Movies</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/cloud/">CLOUD</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/cloud/ci-cd/">CI/CD</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/cloud/">Cloud</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/cloud/ci-cd/">CI/CD</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/firebase/">Firebase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/frontend/">Frontend</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/frontend/etc/">Etc</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/log/">Log</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/log/year/">Year</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/review/">Review</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/review/books/">Books</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/review/movies/">Movies</a></li></ul></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -173,17 +173,17 @@ ga('send', 'pageview');
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/01/14/jenkins-with-gcp/" class="thumbnail">
+        <a href="/2019/01/19/jenkins-with-gitlab/" class="thumbnail">
     
     
-        <span style="background-image:url(https://t1.daumcdn.net/cfile/tistory/992599445C398EC40D)" alt="Jenkins with GCP_설치" class="thumbnail-image"></span>
+        <span style="background-image:url(/2019/01/19/jenkins-with-gitlab/gitlab.jpg)" alt="Jenkins with GCP_Gitlab 연동" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://devist.github.io/2019/01/14/jenkins-with-gcp/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://devist.github.io/2019/01/19/jenkins-with-gitlab/">0</span>
     
 </span>
 
@@ -194,20 +194,22 @@ ga('send', 'pageview');
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/cloud/">Cloud</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/cloud/ci-cd/">CI/CD</a>
+            <a class="article-category-link" href="/categories/cloud/">CLOUD</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/cloud/ci-cd/">CI/CD</a>
             </div>
-            <div class="date"><time datetime="2019-01-13T17:21:12.000Z" itemprop="datePublished">2019-01-14</time></div>
+            <div class="date"><time datetime="2019-01-19T06:58:52.000Z" itemprop="datePublished">2019-01-19</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/01/14/jenkins-with-gcp/">Jenkins with GCP_설치</a>
+        <a href="/2019/01/19/jenkins-with-gitlab/">Jenkins with GCP_Gitlab 연동</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Google cloud Platform에 무료 VM(리눅스 Centos7)을 할당 받아서 Gitlab, Jenkins, Webpack, Mocha를 연동하여 CI/CD를 해보려고 한다. 전문 분야는 아니지만 한 번 직접 구축해보는 것도 좋은 경험이 될 것 같다.
-오늘의 목표는 Google Cloud Platform(이하 GCP)에 VM 인스턴스(Centos
+            저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.
+
+Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다.
+1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x
         </p>
     </div>
 </article>
@@ -275,6 +277,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/19/jenkins-with-gitlab/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2019/01/19/jenkins-with-gitlab/gitlab.jpg)" alt="Jenkins with GCP_Gitlab 연동" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/cloud/">CLOUD</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/cloud/ci-cd/">CI/CD</a></p>
+                            <p class="item-title"><a href="/2019/01/19/jenkins-with-gitlab/" class="title">Jenkins with GCP_Gitlab 연동</a></p>
+                            <p class="item-date"><time datetime="2019-01-19T06:58:52.000Z" itemprop="datePublished">2019-01-19</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -356,26 +378,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/01/14/jenkins-with-gcp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://t1.daumcdn.net/cfile/tistory/992599445C398EC40D)" alt="Jenkins with GCP_설치" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/cloud/">Cloud</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/cloud/ci-cd/">CI/CD</a></p>
-                            <p class="item-title"><a href="/2019/01/14/jenkins-with-gcp/" class="title">Jenkins with GCP_설치</a></p>
-                            <p class="item-date"><time datetime="2019-01-13T17:21:12.000Z" itemprop="datePublished">2019-01-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -385,7 +387,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/cd/" style="font-size: 10px;">cd</a> <a href="/tags/ci/" style="font-size: 10px;">ci</a> <a href="/tags/esdoc/" style="font-size: 20px;">esdoc</a> <a href="/tags/gcp/" style="font-size: 10px;">gcp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/jsdoc/" style="font-size: 20px;">jsdoc</a>
+            <a href="/tags/cd/" style="font-size: 10px;">CD</a> <a href="/tags/ci/" style="font-size: 10px;">CI</a> <a href="/tags/gcp/" style="font-size: 10px;">GCP</a> <a href="/tags/googlecloudplatform/" style="font-size: 10px;">GoogleCloudPlatform</a> <a href="/tags/jenkins/" style="font-size: 10px;">JENKINS</a> <a href="/tags/cd/" style="font-size: 10px;">cd</a> <a href="/tags/ci/" style="font-size: 10px;">ci</a> <a href="/tags/esdoc/" style="font-size: 20px;">esdoc</a> <a href="/tags/gcp/" style="font-size: 10px;">gcp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/jsdoc/" style="font-size: 20px;">jsdoc</a>
         </div>
     </div>
 
@@ -395,7 +397,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud/">Cloud</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud/ci-cd/">CI/CD</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/firebase/">Firebase</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/frontend/">Frontend</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/frontend/etc/">Etc</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/log/">Log</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/log/year/">Year</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/review/">Review</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/review/books/">Books</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/review/movies/">Movies</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud/">CLOUD</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud/ci-cd/">CI/CD</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cloud/">Cloud</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cloud/ci-cd/">CI/CD</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/firebase/">Firebase</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/frontend/">Frontend</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/frontend/etc/">Etc</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/log/">Log</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/log/year/">Year</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/review/">Review</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/review/books/">Books</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/review/movies/">Movies</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -405,7 +407,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -415,7 +417,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cd/">cd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ci/">ci</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/esdoc/">esdoc</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcp/">gcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsdoc/">jsdoc</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cd/">CD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ci/">CI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcp/">GCP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/googlecloudplatform/">GoogleCloudPlatform</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">JENKINS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cd/">cd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ci/">ci</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/esdoc/">esdoc</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gcp/">gcp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsdoc/">jsdoc</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 

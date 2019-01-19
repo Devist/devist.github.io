@@ -6,7 +6,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://devist.github.io/"/>
-  <updated>2019-01-16T12:02:42.975Z</updated>
+  <updated>2019-01-19T07:41:29.299Z</updated>
   <id>https://devist.github.io/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jenkins with GCP_Gitlab 연동</title>
+    <link href="https://devist.github.io/2019/01/19/jenkins-with-gitlab/"/>
+    <id>https://devist.github.io/2019/01/19/jenkins-with-gitlab/</id>
+    <published>2019-01-19T06:58:52.000Z</published>
+    <updated>2019-01-19T07:41:29.299Z</updated>
+    
+    <content type="html"><![CDATA[<p>저번 포스팅에서는 <a href="https://devist.github.io/2019/01/14/jenkins-with-gcp/">Centos7에 젠킨스를 설치</a>했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.</p><p><br></p><h1 id="Step1-git-설치"><a href="#Step1-git-설치" class="headerlink" title="Step1. git 설치"></a>Step1. git 설치</h1><p>먼저 Git을 설치하기 위해, Repository를 설정한다.</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br></pre></td></tr></table></figure><p>Git을 설치한다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install git</span><br></pre></td></tr></table></figure><p>정상적으로 설치되었는지 버전을 확인한다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure><p><br><br></p><h1 id="Step2-gitlab-설치"><a href="#Step2-gitlab-설치" class="headerlink" title="Step2. gitlab 설치"></a>Step2. gitlab 설치</h1><p><a href="https://about.gitlab.com/install/#centos-7" target="_blank" rel="noopener">https://about.gitlab.com/install/#centos-7</a> 를 따라하되, 포트 설정만 변경해준다. 톰캣 등 기본적으로 8080 포트를 많이 사용하는데 gitlab 의 기본 설정 또한 마찬가지로 8080 포트를 사용하고 있기 때문이다. 나는 9090으로 변경할 예정이다.</p><p>시스템 방화벽에서 HTTP 및 SSH 액세스가 가능하도록 한다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install -y curl policycoreutils-python openssh-server</span><br><span class="line">$ sudo systemctl enable sshd</span><br><span class="line">$ sudo systemctl start sshd</span><br><span class="line"></span><br><span class="line">$ sudo firewall-cmd --permanent --add-service=http</span><br><span class="line">$ sudo systemctl reload firewalld</span><br></pre></td></tr></table></figure><p>알림용 이메일 사용을 위해 다음을 실행한다. </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install postfix</span><br><span class="line">$ sudo systemctl enable postfix</span><br><span class="line">$ sudo systemctl start postfix</span><br></pre></td></tr></table></figure><p>Gitlab package repository를 설정한다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash</span><br></pre></td></tr></table></figure><p>Gitlab을 설치한다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install gitlab-ee</span><br></pre></td></tr></table></figure><p>Gitlab 포트를 변경하기 위하여 gitlab 설정 파일을 vi 에디터로 연다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/gitlab/gitlab.rb</span><br></pre></td></tr></table></figure><p><br>먼저 웹사이트 주소의 포트를 사용할 포트로 변경하기 위해 external_url 변수를 수정한다. 나 같은 경우는 기본 80 포트를 사용할 것이기 때문에 포트 번호를 명시하지 않았다.<img src="/2019/01/19/jenkins-with-gitlab/external_url.png"></p><p><br>인증과 unicorn 관련하여 포트가 8080으로 되어 있는 부분을 9090 포트로 변경하려고 한다. 내부적인 인증과 관련된 포트이므로 방화벽 해제할 필요는 없다. 먼저 auth_backend를 9090포트로 변경한다.<img src="/2019/01/19/jenkins-with-gitlab/auth_backend.png"></p><p><br>이후 unicorn_port를 9090으로 변경하고 :wq로 저장하여 나온다..<img src="/2019/01/19/jenkins-with-gitlab/unicorn_port.png"></p><p><br>설정을 적용시키기 위해 다음의 명령을 실행해본다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure><p><br>이후 웹브라우저를 열고 외부 접속 URL에 접속해보면 정상적으로 동작하는 것을 확인할 수 있다. root의 비밀번호를 설정해준다.<img src="/2019/01/19/jenkins-with-gitlab/gitlab.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;저번 포스팅에서는 &lt;a href=&quot;https://devist.github.io/2019/01/14/jenkins-with-gcp/&quot;&gt;Centos7에 젠킨스를 설치&lt;/a&gt;했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여
+      
+    
+    </summary>
+    
+      <category term="CLOUD" scheme="https://devist.github.io/categories/cloud/"/>
+    
+      <category term="CI/CD" scheme="https://devist.github.io/categories/cloud/ci-cd/"/>
+    
+    
+      <category term="GCP" scheme="https://devist.github.io/tags/gcp/"/>
+    
+      <category term="JENKINS" scheme="https://devist.github.io/tags/jenkins/"/>
+    
+      <category term="CD" scheme="https://devist.github.io/tags/cd/"/>
+    
+      <category term="CI" scheme="https://devist.github.io/tags/ci/"/>
+    
+      <category term="GoogleCloudPlatform" scheme="https://devist.github.io/tags/googlecloudplatform/"/>
+    
+      <category term="gitlab" scheme="https://devist.github.io/tags/gitlab/"/>
+    
+      <category term="git" scheme="https://devist.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>JSDoc 설치 및 사용방법 | JavaDoc과 비슷한 JSDoc으로 자바스크립트 문서화</title>

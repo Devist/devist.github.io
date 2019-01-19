@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://devist.github.io/2019/01/19/jenkins-with-gitlab/</loc>
+        <lastmod>2019-01-19T07:41:29.299Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://devist.github.io/2019/01/15/how-to-use-esdoc/</loc>
         <lastmod>2019-01-19T07:39:23.678Z</lastmod>
         <changefreq>weekly</changefreq>
