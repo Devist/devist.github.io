@@ -9,7 +9,15 @@
 
     <url>
         <loc>https://devist.github.io/2019/01/19/jenkins-with-gitlab/</loc>
-        <lastmod>2019-01-19T07:44:14.022Z</lastmod>
+        <lastmod>2019-01-19T07:46:53.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://devist.github.io/2019/01/14/jenkins-with-gcp/</loc>
+        <lastmod>2019-01-19T07:46:52.679Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -42,14 +50,6 @@
     <url>
         <loc>https://devist.github.io/2019/01/14/review-books-2/</loc>
         <lastmod>2019-01-14T13:55:07.323Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://devist.github.io/2019/01/14/jenkins-with-gcp/</loc>
-        <lastmod>2019-01-14T12:53:51.213Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
