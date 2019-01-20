@@ -6,25 +6,25 @@
     
 
     
-    <title>Jenkins with GCP_(2)Gitlab 연동 | 오동환</title>
+    <title>Jenkins with GCP_(2)Gitlab 설치 | 오동환</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="GCP,Jenkins,CD,CI,Google Cloud Platform,gitlab,git,centos7">
     
-    <meta name="description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x">
+    <meta name="description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Jenkins와 연동할 Gitlab을 설치해본다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x8">
 <meta name="keywords" content="GCP,Jenkins,CD,CI,Google Cloud Platform,gitlab,git,centos7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jenkins with GCP_(2)Gitlab 연동">
+<meta property="og:title" content="Jenkins with GCP_(2)Gitlab 설치">
 <meta property="og:url" content="https://devist.github.io/2019/01/19/jenkins-with-gitlab/index.html">
 <meta property="og:site_name" content="오동환">
-<meta property="og:description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x">
+<meta property="og:description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Jenkins와 연동할 Gitlab을 설치해본다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x8">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://devist.github.io/2019/01/19/jenkins-with-gitlab/gitlab.png">
-<meta property="og:updated_time" content="2019-01-19T07:46:53.755Z">
+<meta property="og:updated_time" content="2019-01-20T16:13:32.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jenkins with GCP_(2)Gitlab 연동">
-<meta name="twitter:description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x">
+<meta name="twitter:title" content="Jenkins with GCP_(2)Gitlab 설치">
+<meta name="twitter:description" content="저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Jenkins와 연동할 Gitlab을 설치해본다.  Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다. 1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x8">
 <meta name="twitter:image" content="https://devist.github.io/2019/01/19/jenkins-with-gitlab/gitlab.png">
     
     <link rel="canonical" href="https://devist.github.io/2019/01/19/jenkins-with-gitlab/">
@@ -167,7 +167,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        Jenkins with GCP_(2)Gitlab 연동
+        Jenkins with GCP_(2)Gitlab 설치
         </h1>
     
 
@@ -194,7 +194,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>저번 포스팅에서는 <a href="https://devist.github.io/2019/01/14/jenkins-with-gcp/">Centos7에 젠킨스를 설치</a>했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.</p>
+            <p>저번 포스팅에서는 <a href="https://devist.github.io/2019/01/14/jenkins-with-gcp/">Centos7에 젠킨스를 설치</a>했다. 이번에는 Jenkins가 설치된 Centos7에 Jenkins와 연동할 Gitlab을 설치해본다.</p>
 <p><br></p>
 <h1 id="Step1-git-설치"><a href="#Step1-git-설치" class="headerlink" title="Step1. git 설치"></a>Step1. git 설치</h1><p>먼저 Git을 설치하기 위해, Repository를 설정한다.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm</span><br></pre></td></tr></table></figure>
@@ -208,18 +208,57 @@ ga('send', 'pageview');
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install -y curl policycoreutils-python openssh-server</span><br><span class="line">$ sudo systemctl enable sshd</span><br><span class="line">$ sudo systemctl start sshd</span><br><span class="line"></span><br><span class="line">$ sudo firewall-cmd --permanent --add-service=http</span><br><span class="line">$ sudo systemctl reload firewalld</span><br></pre></td></tr></table></figure>
 <p>알림용 이메일 사용을 위해 다음을 실행한다. </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install postfix</span><br><span class="line">$ sudo systemctl enable postfix</span><br><span class="line">$ sudo systemctl start postfix</span><br></pre></td></tr></table></figure>
-<p>Gitlab package repository를 설정한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash</span><br></pre></td></tr></table></figure>
+<p>Gitlab package repository를 설정한다. 참고로 gitlab ee 는 엔터프라이즈 버전이며, ce는 커뮤니티 버전으로 무료이다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | sudo bash</span><br></pre></td></tr></table></figure>
 <p>Gitlab을 설치한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install gitlab-ee</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install gitlab-ce</span><br></pre></td></tr></table></figure>
 <p>Gitlab 포트를 변경하기 위하여 gitlab 설정 파일을 vi 에디터로 연다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/gitlab/gitlab.rb</span><br></pre></td></tr></table></figure>
 <p><br>먼저 웹사이트 주소의 포트를 사용할 포트로 변경하기 위해 external_url 변수를 수정한다. 나 같은 경우는 기본 80 포트를 사용할 것이기 때문에 포트 번호를 명시하지 않았다.<img src="/2019/01/19/jenkins-with-gitlab/external_url.png"></p>
 <p><br>인증과 unicorn 관련하여 포트가 8080으로 되어 있는 부분을 9090 포트로 변경하려고 한다. 내부적인 인증과 관련된 포트이므로 방화벽 해제할 필요는 없다. 먼저 auth_backend를 9090포트로 변경한다.<img src="/2019/01/19/jenkins-with-gitlab/auth_backend.png"></p>
-<p><br>이후 unicorn_port를 9090으로 변경하고 :wq로 저장하여 나온다..<img src="/2019/01/19/jenkins-with-gitlab/unicorn_port.png"></p>
+<p><br>이후 unicorn_port를 9090으로 변경하고 :wq로 저장하여 나온다.<img src="/2019/01/19/jenkins-with-gitlab/unicorn_port.png"></p>
 <p><br>설정을 적용시키기 위해 다음의 명령을 실행해본다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure>
 <p><br>이후 웹브라우저를 열고 외부 접속 URL에 접속해보면 정상적으로 동작하는 것을 확인할 수 있다. root의 비밀번호를 설정해준다.<img src="/2019/01/19/jenkins-with-gitlab/gitlab.png"></p>
+<h1 id="Step3-Jenkins와-Gitlab-연동"><a href="#Step3-Jenkins와-Gitlab-연동" class="headerlink" title="Step3. Jenkins와 Gitlab 연동"></a>Step3. Jenkins와 Gitlab 연동</h1><p>이제 Gitlab과 Jenkins를 단순히 연동해본다. 이 단계까지만 끝내면 추후 많은 것들을 해볼 수 있을 것 같다.</p>
+<h4 id="A-Jenkins에-gitlab-플러그인-설치"><a href="#A-Jenkins에-gitlab-플러그인-설치" class="headerlink" title="A. Jenkins에 gitlab 플러그인 설치"></a>A. Jenkins에 gitlab 플러그인 설치</h4><p>Jenkins와 Gitlab 연동을 위해서, 먼저 Jenkins에 관련 Plugin을 설치한다. <strong>Jenkins 웹사이트 접속-&gt;왼쪽 메뉴 중 Jenkins 관리 클릭-&gt;플러그인 관리-&gt;설치 가능 탭 선택 -&gt; 필터에 Gitlab 입력</strong> 후, 검색된 Gitlab 관련 플러그인을 설치한다. 나 같은 경우 모두 설치했다.<img src="/2019/01/19/jenkins-with-gitlab/gitlab_install_plugin.png"></p>
+<ul>
+<li>Gitlab Authentication : gitlab OAuth 인증 플러그인</li>
+<li>Violation Comments to Gitlab : 코드분석기로 보고된 위반사항을 찾아주고 comments 할 수 있도록 돕는 플러그인</li>
+<li>Gitlab : Gitlab에서 젠킨스 빌드를 실행하고 결과를 gitlab UI에 표시할 수 있도록 해주는 플러그인</li>
+<li>Gitlab Logo</li>
+<li>Gitlab Merge Request Builder : Jenkins를 gitlab과 병합 요청을 빌드하기 위해 통합해주는 플러그인</li>
+<li>Gitlab Hook</li>
+</ul>
+<p><br><br></p>
+<h4 id="B-Gitlab에서-Access-Token-생성"><a href="#B-Gitlab에서-Access-Token-생성" class="headerlink" title="B. Gitlab에서 Access Token 생성"></a>B. Gitlab에서 Access Token 생성</h4><p>아래 그림과 같이 Profile-&gt;Access Token 탭으로 이동해서, 토큰 이름, 만료일자, Scope 선택 후 access Token을 생성한 후 token을 복사해 둔다.<img src="/2019/01/19/jenkins-with-gitlab/make_gitlab_access_token.png"></p>
+<p><br><br></p>
+<h4 id="C-Gitlab에서-Jenkins와-연동할-프로젝트-생성"><a href="#C-Gitlab에서-Jenkins와-연동할-프로젝트-생성" class="headerlink" title="C. Gitlab에서 Jenkins와 연동할 프로젝트 생성"></a>C. Gitlab에서 Jenkins와 연동할 프로젝트 생성</h4><p>Jenkins에 연동할 프로젝트도 하나 생성해본다. Clone with HTTP url 을 사용할 것이다.<img src="/2019/01/19/jenkins-with-gitlab/create_project.png"></p>
+<p><br><br></p>
+<h4 id="D-젠킨스에-Gitlab-Token-등록"><a href="#D-젠킨스에-Gitlab-Token-등록" class="headerlink" title="D. 젠킨스에 Gitlab Token 등록"></a>D. 젠킨스에 Gitlab Token 등록</h4><p>Gitlab 토큰을 젠킨스에서 사용하기 위해, Jenkins에서 Global Credential을 등록해준다. 이를 위해 먼저 젠킨스 사이트로 이동하여, <strong>Credentials-&gt;System-&gt;Global Credentials</strong>로 이동하여 <strong>adding some Credentials 를 클릭</strong>한다.​<img src="/2019/01/19/jenkins-with-gitlab/go_to_make_credentials.gif"></p>
+<p><br></p>
+<p>Kind 부분을 클릭하여 <strong>Gitlab API Token</strong>을 선택해주고, API Token에는 아까 Gitlab에서 생성한 Token을 입력해준 후, 이후 OK를 클릭하여 생성완료 해주면, Gitlab과 Jenkins의 연동이 완료된다.<img src="/2019/01/19/jenkins-with-gitlab/New_Credentials_Jenkins.png"></p>
+<p><br><br></p>
+<h4 id="E-젠킨스-build-위한-Item-만들기"><a href="#E-젠킨스-build-위한-Item-만들기" class="headerlink" title="E. 젠킨스 build 위한 Item 만들기"></a>E. 젠킨스 build 위한 Item 만들기</h4><p>Jenkins 대시보드에서 새로운 아이템 버튼을 클릭하여, 적당한 이름과 함께 <strong>Freesytle project</strong> 를 선택한 후, Ok 버튼을 만들어 아이템을 생성한다.<img src="/2019/01/19/jenkins-with-gitlab/make_jenkins_item.gif"></p>
+<p><br></p>
+<p><strong>General Tab : </strong> 간단하게 설명만 적어준다.<img src="/2019/01/19/jenkins-with-gitlab/jenkins_config_general.png"></p>
+<p><br></p>
+<p><strong>소스 코드 관리 탭 : </strong> </p>
+<ul>
+<li>위에서 생성한 Gitlab Repository의 Clone URL을 입력한 후, <strong>Add 버튼 -&gt; Jenkins</strong> 를 클릭한다.<img src="/2019/01/19/jenkins-with-gitlab/jenkins_config_sourcecode_1.png"></li>
+<li>Gitlab 아이디와 비밀번호를 입력한 후 add 버튼을 누른다.<img src="/2019/01/19/jenkins-with-gitlab/jenkins_config_sourcecode_2.png"></li>
+<li>생성한 Credential을 선택해준다.<img src="/2019/01/19/jenkins-with-gitlab/jenkins_config_sourcecode_3.png"></li>
+</ul>
+<p><br></p>
+<p><strong>build Tab : </strong> 간단하게 설명만 적어준다.<img src="/2019/01/19/jenkins-with-gitlab/jenkins_config_build.png"></p>
+<p>마지막으로 하단의 저장 버튼이나 Apply 버튼을 클릭해서, Item 생성을 완료해준다.</p>
+<p><br><br></p>
+<h4 id="F-Jenkins로-빌드해보기"><a href="#F-Jenkins로-빌드해보기" class="headerlink" title="F. Jenkins로 빌드해보기"></a>F. Jenkins로 빌드해보기</h4><p>이제 모든 준비가 끝났으므로 테스트 해 볼 차례다. 아래와 같이 dashboard에서 우리가 만든 Item을 확인할 수 있다. </p>
+<ul>
+<li>Gitlab에서 Readme.md 파일 수정하여commit<img src="/2019/01/19/jenkins-with-gitlab/test1_commit.png"></li>
+<li>Jenkins로 돌아와 Build Icon 클릭<img src="/2019/01/19/jenkins-with-gitlab/test2_move.png"><img src="/2019/01/19/jenkins-with-gitlab/test3_build.png"></li>
+<li>정상적으로 빌드되었는지 확인하기 위해, SSH 접속하여 Build Shell script로 인해 *.log 파일이 생성되었는지 확인.<img src="/2019/01/19/jenkins-with-gitlab/test4_ssh.png"></li>
+</ul>
 
         </div>
         <footer class="article-footer">
@@ -297,19 +336,19 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "DongHwan"
         },
-        "headline": "Jenkins with GCP_(2)Gitlab 연동",
+        "headline": "Jenkins with GCP_(2)Gitlab 설치",
         "image": "https://devist.github.io/2019/01/19/jenkins-with-gitlab/gitlab.png",
         "keywords": "GCP Jenkins CD CI Google Cloud Platform gitlab git centos7",
         "genre": "Cloud CI/CD",
         "datePublished": "2019-01-19",
         "dateCreated": "2019-01-19",
-        "dateModified": "2019-01-19",
+        "dateModified": "2019-01-21",
         "url": "https://devist.github.io/2019/01/19/jenkins-with-gitlab/",
-        "description": "저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Gitlab을 설치하여 젠킨스와 연동해보려고 한다.
+        "description": "저번 포스팅에서는 Centos7에 젠킨스를 설치했다. 이번에는 Jenkins가 설치된 Centos7에 Jenkins와 연동할 Gitlab을 설치해본다.
 
 Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다.
-1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x"
-        "wordCount": 300
+1$ sudo yum install http://opensource.wandisco.com/centos/7/git/x8"
+        "wordCount": 682
     }
 </script>
 
@@ -401,7 +440,7 @@ Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다.
                             <a href="/2019/01/19/jenkins-with-gitlab/" class="thumbnail">
     
     
-        <span style="background-image:url(/2019/01/19/jenkins-with-gitlab/gitlab.png)" alt="Jenkins with GCP_(2)Gitlab 연동" class="thumbnail-image"></span>
+        <span style="background-image:url(/2019/01/19/jenkins-with-gitlab/gitlab.png)" alt="Jenkins with GCP_(2)Gitlab 설치" class="thumbnail-image"></span>
     
     
 </a>
@@ -410,7 +449,7 @@ Step1. git 설치먼저 Git을 설치하기 위해, Repository를 설정한다.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/cloud/">Cloud</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/cloud/ci-cd/">CI/CD</a></p>
-                            <p class="item-title"><a href="/2019/01/19/jenkins-with-gitlab/" class="title">Jenkins with GCP_(2)Gitlab 연동</a></p>
+                            <p class="item-title"><a href="/2019/01/19/jenkins-with-gitlab/" class="title">Jenkins with GCP_(2)Gitlab 설치</a></p>
                             <p class="item-date"><time datetime="2019-01-19T06:58:52.000Z" itemprop="datePublished">2019-01-19</time></p>
                         </div>
                     </li>
