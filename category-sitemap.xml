@@ -36,29 +36,15 @@
     </url>
 
     <url>
-        <loc>https://devist.github.io/categories/review/</loc>
-        <lastmod>2019-01-14T14:04:17.966Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://devist.github.io/categories/review/books/</loc>
-        <lastmod>2019-01-14T14:04:17.966Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://devist.github.io/categories/frontend/</loc>
-        <lastmod>2019-01-19T07:39:23.678Z</lastmod>
+        <lastmod>2019-01-20T16:05:41.308Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://devist.github.io/categories/frontend/etc/</loc>
-        <lastmod>2019-01-19T07:39:23.678Z</lastmod>
+        <lastmod>2019-01-20T16:05:41.308Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -73,6 +59,20 @@
     <url>
         <loc>https://devist.github.io/categories/cloud/ci-cd/</loc>
         <lastmod>2019-01-20T16:13:32.168Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://devist.github.io/categories/review/</loc>
+        <lastmod>2019-01-21T13:34:01.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://devist.github.io/categories/review/books/</loc>
+        <lastmod>2019-01-21T13:34:01.087Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

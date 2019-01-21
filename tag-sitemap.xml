@@ -3,29 +3,29 @@
 
 
     <url>
+        <loc>https://devist.github.io/tags/jenkins/</loc>
+        <lastmod>2019-01-19T07:46:52.679Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://devist.github.io/tags/javascript/</loc>
-        <lastmod>2019-01-19T07:39:23.678Z</lastmod>
+        <lastmod>2019-01-20T16:05:41.308Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://devist.github.io/tags/jsdoc/</loc>
-        <lastmod>2019-01-19T07:39:23.678Z</lastmod>
+        <lastmod>2019-01-20T16:05:41.308Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://devist.github.io/tags/esdoc/</loc>
-        <lastmod>2019-01-19T07:39:23.678Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://devist.github.io/tags/jenkins/</loc>
-        <lastmod>2019-01-19T07:46:52.679Z</lastmod>
+        <lastmod>2019-01-20T16:05:41.308Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -82,6 +82,27 @@
     <url>
         <loc>https://devist.github.io/tags/centos7/</loc>
         <lastmod>2019-01-20T16:13:32.168Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://devist.github.io/tags/%EB%8F%85%EC%84%9C/</loc>
+        <lastmod>2019-01-21T13:34:01.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://devist.github.io/tags/%EC%B1%85/</loc>
+        <lastmod>2019-01-21T13:34:01.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://devist.github.io/tags/book/</loc>
+        <lastmod>2019-01-21T13:34:01.087Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
