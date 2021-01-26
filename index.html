@@ -1,290 +1,397 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>이력서 - 오동환</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      html,
+      body {
+        height: 100vh;
+      }
 
-<head>
-  <title>이력서 - 오동환</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="cache-control" content="no-cache" />
-  <meta http-equiv="pragma" content="no-cache" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta name="viewport"
-    content="width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
-  <link href="/commons/tailwind.min.css" rel="stylesheet" />
-  <link href="/commons/main.css" rel="stylesheet" />
-  <link href="/commons/page.css" rel="stylesheet" />
+      body {
+        background-color: #ffffff;
+        color: #515357;
+        font-weight: 300;
+        font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+      }
 
-  <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet" type="text/css" />
-</head>
+      body:before {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 10px;
+        background: #00d2ff;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          right top,
+          from(#377dee),
+          to(#4b96e6)
+        );
+        background: linear-gradient(90deg, #377dee, #4b96e6);
+      }
 
-<body>
-  <div class="nav"></div>
-  <div class="container">
-    <div class="section">
-      <h1 class="text-7xl font-bold">안녕하세요,</h1>
-      <h1 class="text-7xl font-bold">
-        저는 오동환입니다<span class="text-blue">.</span>
-      </h1>
-    </div>
+      .container {
+        width: 100%;
+        max-width: 50rem;
+        margin: auto;
+      }
 
-    <div class="section">
-      <p class="text-3xl">
-        여러 개발 분야 중 웹 프론트엔드 엔지니어로 일하는 걸 선호하며 아름답고
-        간결한 화면을 구현하는 것을 좋아합니다.
-      </p>
+      .section {
+        padding: 2rem 2rem;
+      }
 
-      <p class="text-3xl">
-        제가 구현한 서비스를 이용하는 사용자를 보는 것은,
-      </p>
-      <p class="text-3xl">
-        개발자로서 즐겁고 행복하기 위한 가장 큰 요소 중 하나입니다. 주도적으로
-        학습하하며 자유롭게 소통할 수 있는 환경을 선호합니다.
-      </p>
-    </div>
+      .divider {
+        height: 1px;
+        background-color: #eeeeee;
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
 
-    <div class="section">
-      <h2 class="text-5xl font-bold pb-20">
-        Career<span class="text-blue">.</span>
-      </h2>
+      @media (min-width: 1024px) {
+        .lg\:text-7xl {
+          font-size: 5rem;
+        }
+      }
 
-      <div class="w-full flex text-lg">
-        <div class="w-2/5">
-          <h3 class="text-3xl font-bold">
-            롯데정보통신<span class="text-blue">.</span>
-          </h3>
-          <div class="text-base py-1">Software Engineer</div>
-          <div class="text-base">2017.03 - 현재</div>
-        </div>
-        <div class="w-3/5">
-          <div>
-            <h3 class="text-3xl font-bold pb-3">
-              LERNI 프론트엔드<span class="text-blue">.</span>
+      .text-blue {
+        color: #4b96e6;
+      }
+
+      ol {
+        list-style: none;
+      }
+
+      ol li::before {
+        content: '\2022';
+        color: #4b96e6;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="section">
+        <h1 class="text-4xl sm:text-7xl font-bold">안녕하세요,</h1>
+        <h1 class="text-4xl sm:text-7xl font-bold">
+          저는 오동환입니다<span class="text-blue">.</span>
+        </h1>
+      </div>
+
+      <div class="section">
+        <p class="text-xl sm:text-3xl">
+          여러 개발 분야 중 웹 프론트엔드 엔지니어로 일하는 걸 선호하며 아름답고
+          간결한 화면을 구현하는 것을 좋아합니다.
+        </p>
+
+        <p class="text-xl sm:text-3xl">
+          구현한 서비스를 이용하는 사용자를 보는 것은, 개발자로서 즐겁고
+          행복하기 위한 가장 큰 요소 중 하나입니다.
+        </p>
+        <p class="text-xl sm:text-3xl">
+          주도적으로 일하며 자유롭게 소통할 수 있는 환경을 선호합니다.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 class="text-3xl sm:text-5xl font-bold pb-20">
+          Career<span class="text-blue">.</span>
+        </h2>
+
+        <div class="w-full sm:flex text-base sm:text-lg">
+          <div class="w-full sm:w-2/5">
+            <h3 class="text-2xl sm:text-3xl font-bold">
+              롯데정보통신<span class="text-blue">.</span>
             </h3>
-            <div class="text-base">2019.01 - 현재</div>
-            <h4 class="text-xl font-bold py-3">Description</h4>
-            <p class="text-lg">
-              LERNI는 세미나, 교육과 같은 이벤트의 전-중-후를 지원하는 이벤트
-              솔루션입니다. 이벤트 준비 단계에서 필요한 이벤트 정보 작성, 모집
-              신청부터 이벤트 현장에서 필요한 질문하기, 출석, 설문 등의 기능을
-              지원합니다.
-            </p>
-
-            <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
-            <p class="text-lg">프론트엔드 리드 개발자로서,</p>
-            <ol class="pl-8 py-3 text-base">
-              <li>CI/CD 구성</li>
-              <li>Nuxt(Vue)를 이용한 SSR 앱 개발 환경 구성</li>
-              <li>Vue 기반 Atomic Design 패턴 도입</li>
-              <li>Cypress 기반의 E2E 테스트 구성</li>
-              <li>Storybook 활용한 컴포넌트 기반의 디자인 가이드 북 작성</li>
-            </ol>
-            <p class="text-lg">을 담당하였습니다.</p>
-
-            <h4 class="text-xl font-bold pt-5 pb-3">2.0 주 사용 기술</h4>
-            <div>Typescript, Vue.js, Nuxt.js, Sass, Cypress</div>
-
-            <h4 class="text-xl font-bold pt-5 pb-3">1.0 주 사용 기술</h4>
-            <div>Javascript, Webpack</div>
+            <div class="text-base py-1">Software Engineer</div>
+            <div class="text-base">2017.03 - 현재</div>
           </div>
+          <div class="w-full sm:w-3/5">
+            <div>
+              <h3 class="text-xl sm:text-3xl font-bold pb-3">
+                LERNI 프론트엔드<span class="text-blue">.</span>
+              </h3>
 
-          <div>
-            <h3 class="text-3xl font-bold pt-16 pb-3">
-              INSIGHT 모바일 하이브리드 앱<span class="text-blue">.</span>
+              <div class="hidden sm:block text-base">2019.01 - 현재</div>
+              <!-- <img class="border" src="../commons/main.png">
+            <div class="flex flex-col sm:flex-row w-full align-middle">
+              <div>
+                <img class="border" src="../commons/QuestionLive.gif">
+              </div>
+              
+              <img class="border w-full sm:w-1/3" src="../commons/AddQuestion.gif">
+            </div> -->
+
+              <h4 class="text-xl font-bold py-3">Description</h4>
+              <p class="text-lg">
+                LERNI는 세미나, 교육과 같은 이벤트의 전-중-후를 지원하는 이벤트
+                솔루션입니다. 이벤트 준비 단계에서 필요한 이벤트 정보 작성, 모집
+                신청부터 이벤트 현장에서 필요한 질문하기, 출석, 설문 등의 기능을
+                지원합니다.
+              </p>
+
+              <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
+              <p class="text-lg">프론트엔드 리드 개발자로서,</p>
+              <ol class="pl-8 py-3 text-base">
+                <li>CI/CD 구성</li>
+                <li>Nuxt(Vue)를 이용한 SSR 앱 개발 환경 구성</li>
+                <li>Vue 기반 Atomic Design 패턴 도입</li>
+                <li>Cypress 기반의 E2E 테스트 구성</li>
+                <li>Storybook 활용한 컴포넌트 기반의 디자인 가이드 북 작성</li>
+              </ol>
+              <p class="text-lg">을 담당하였습니다.</p>
+
+              <h4 class="text-xl font-bold pt-5 pb-3">2.0 주 사용 기술</h4>
+              <div>Typescript, Vue.js, Nuxt.js, Sass, Cypress</div>
+
+              <h4 class="text-xl font-bold pt-5 pb-3">1.0 주 사용 기술</h4>
+              <div>Javascript, Webpack</div>
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold pt-16 pb-3">
+                INSIGHT 모바일 하이브리드 앱<span class="text-blue">.</span>
+              </h3>
+              <div class="text-base">2017.09 - 2018.05</div>
+              <h4 class="text-xl font-bold py-3">Description</h4>
+              <p>
+                INSIGHT는 롯데인재개발원에서 진행하는 교육의 콘텐츠를 지원하는
+                서비스입니다. 계열사별 참가 인원 관리, 출석, 모바일 SMS 또는
+                푸시를 통한 공지발송, 실시간 퀴즈 제어와 같은 기능들을
+                지원합니다.
+              </p>
+              <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
+              <p>
+                L.EMP 라는 LDCC 자체 모바일 웹 앱 프레임워크 기반에서 모바일 웹
+                앱 개발을 담당하였습니다. 주로 실시간 퀴즈를 위한 웹 리모컨 /
+                실시간 화면 제어 코어 개발에 기여하였습니다.
+              </p>
+              <h4 class="text-xl font-bold pt-5 pb-3">주 사용 기술</h4>
+              <div>vanilla JS, jQuery, css, Firebase database</div>
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold pt-16 pb-3">
+                특별 채용 전영 FE 문제 출제<span class="text-blue">.</span>
+              </h3>
+              <div>2019.02 / 2019.08</div>
+              <br />
+              <h4 class="text-xl font-bold py-3">Description</h4>
+              <p>
+                자사 내 특별 채용 전형인 SPEC 태클의 프론트엔드 문제 출제를
+                담당했습니다.
+              </p>
+              <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
+              <p>
+                webpack 환경 내에서 router 개념과 이벤트 위임 등의 문제를
+                해결해야하는 기초 템플릿 작성하는 방식으로 문제를
+                출제하였습니다.
+              </p>
+              <h4 class="text-xl font-bold py-3">주 사용 기술</h4>
+              <div>banila JS, webpack, tailwind css</div>
+            </div>
+
+            <div>
+              <h3 class="text-3xl font-bold pt-16 pb-3">
+                L.omeo PUSH Android SDK<span class="text-blue">.</span>
+              </h3>
+              <div>2017.08 - 2017.12</div>
+              <!-- <img class="border" src="../commons/lmessage.jpg"> -->
+              <h4 class="text-xl font-bold py-3">Description</h4>
+              <p>
+                L.OMEO PUSH는 SMS, 카카오 알림톡, PUSH의 통합 메시징 서비스인
+                L.omeo에서 PUSH를 담당하며, 대규모의 안드로이드, iOS 기기에 푸시
+                메세지를 발송해주는 시스템입니다. 현재 롯데 시네마, 롯데렌탈,
+                롯데호텔, 롯데상품권 등 11개 사에서 이용 중입니다.
+              </p>
+              <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
+              <p>
+                push 서비스는 기존에 파트너사가 개발했으며, 혼자 26대의 서버와
+                혼재되어 있는 기술들을 유지보수하며 운영하는데 한계가
+                있었습니다. 이에 firebase, nodejs, android 앱 등 프로토타입을
+                개발하여 자사가 직접 개발,운영하는 것을 제안했습니다. 실제
+                프로젝트에서는 android sdk 개발을 담당하여 AAR 형태의 라이브러리
+                개발에 참여했습니다.
+              </p>
+              <h4 class="text-xl font-bold py-3">주 사용 기술</h4>
+              <div>Android(JAVA), realm, Firebase Cloud Messaing</div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="w-full flex">
+          <div class="w-2/5">
+            <h3 class="text-3xl font-bold">
+              SPH<span class="text-blue">.</span>
             </h3>
-            <div class="text-base">2017.09 - 2018.05</div>
+            <div>Software Engineer</div>
+            <div>2016.02 - 2016.12</div>
+          </div>
+          <div class="w-3/5">
+            <h3 class="text-3xl font-bold pb-3">
+              Google Maps 파트너<span class="text-blue">.</span>
+            </h3>
+            <div>2016.02 - 2016.12</div>
+            <h4 class="text-xl font-bold py-3">Description</h4>
+            <div>
+              국내 대기업의 Google maps 이용 회사의 적용을 돕거나, 회사 blog
+              포스팅, Google Korea 본사 세미나실에서 신규 web, android 기술
+              전파에 공헌하였습니다.
+            </div>
+
+            <h4 class="text-xl font-bold pt-5 pb-3">주 사용 기술</h4>
+            <div>Javascript, Android (Java), jQuery, Firebase</div>
+            <div>geofence api, awareness api, place api, etc.</div>
+
+            <h3 class="text-3xl font-bold pt-16 pb-3">
+              Supermap 파트너<span class="text-blue">.</span>
+            </h3>
+            <div>2016.02 - 2016.12</div>
             <h4 class="text-xl font-bold py-3">Description</h4>
             <p>
-              INSIGHT는 롯데인재개발원에서 진행하는 교육의 콘텐츠를 지원하는
-              서비스입니다. 계열사별 참가 인원 관리, 출석, 모바일 SMS 또는
-              푸시를 통한 공지발송, 실시간 퀴즈 제어와 같은 기능들을
-              지원합니다.
-            </p>
-            <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
-            <p>
-              L.EMP 라는 LDCC 자체 모바일 웹 앱 프레임워크 기반에서 모바일 웹
-              앱 개발을 담당하였습니다. 주로 실시간 퀴즈를 위한 웹 리모컨 /
-              실시간 화면 제어 코어 개발에 기여하였습니다.
+              중국 GIS 회사인 Supermap 파트너로서 국내 공공기관 웹서비스에
+              Geometry(공간정보), Geofence 설정 등 GIS 기술을 적용하는데
+              Supermap 솔루션을 도입했습니다.
             </p>
             <h4 class="text-xl font-bold pt-5 pb-3">주 사용 기술</h4>
-            <div>banila JS, jQuery, css, Firebase database</div>
-          </div>
+            <div>banila JS, Android (Java), jQuery</div>
 
-          <div>
             <h3 class="text-3xl font-bold pt-16 pb-3">
-              특별 채용 전영 FE 문제 출제<span class="text-blue">.</span>
+              도시가스 현장지원 하이브리드앱<span class="text-blue">.</span>
             </h3>
-            <div>2019.02 / 2019.08</div>
+            <div>2016.07 - 2016.08</div>
+            <img class="border" src="../commons/hybridApp.png" />
             <h4 class="text-xl font-bold py-3">Description</h4>
             <p>
-              자사 내 특별 채용 전형인 SPEC 태클의 프론트엔드 문제 출제를
-              담당했습니다.
+              기존 수기로 작성하던 업무 처리 방식을 스마트 기기로 해결하기 위한
+              프로젝트입니다. 기존 배관망에 대한 종이도면을 전자도면으로
+              대체하고, 시설정보 및 현장정보를 GIS 기반으로 하여 모든 업무를
+              통합합니다.
             </p>
-            <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
-            <p>
-              webpack 환경 내에서 router 개념과 이벤트 위임 등의 문제를
-              해결해야하는 기초 템플릿 작성하는 방식으로 문제를
-              출제하였습니다.
-            </p>
-            <h4 class="text-xl font-bold py-3">주 사용 기술</h4>
-            <div>banila JS, webpack, tailwind css</div>
-          </div>
-
-          <div>
-            <h3 class="text-3xl font-bold pt-16 pb-3">
-              L.omeo PUSH Android SDK<span class="text-blue">.</span>
-            </h3>
-            <div>2017.08 - 2017.12</div>
-            <h4 class="text-xl font-bold py-3">Description</h4>
-            <p>
-              L.OMEO PUSH는 SMS, 카카오 알림톡, PUSH의 통합 메시징 서비스인
-              L.omeo에서 PUSH를 담당하며, 대규모의 안드로이드, iOS 기기에 푸시
-              메세지를 발송해주는 시스템입니다. 현재 롯데 시네마, 롯데렌탈,
-              롯데호텔, 롯데상품권 등 11개 사에서 이용 중입니다.
-            </p>
-            <h4 class="text-xl font-bold pt-5 pb-3">주요 역할</h4>
-            <p>
-              push 서비스는 기존에 파트너사가 개발했으며, 혼자 26대의 서버와
-              혼재되어 있는 기술들을 유지보수하며 운영하는데 한계가
-              있었습니다. 이에 firebase, nodejs, android 앱 등 프로토타입을
-              개발하여 자사가 직접 개발,운영하는 것을 제안했습니다. 실제
-              프로젝트에서는 android sdk 개발을 담당하여 AAR 형태의 라이브러리
-              개발에 참여했습니다.
-            </p>
-            <h4 class="text-xl font-bold py-3">주 사용 기술</h4>
-            <div>Android(JAVA), realm, Firebase Cloud Messaing</div>
+            <h4 class="text-xl font-bold pt-5 pb-3">주 사용 기술</h4>
+            <div>HTML, Javascript, jQueryMobile, OpenLayers3, Android</div>
           </div>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="w-full flex">
-        <div class="w-2/5">
-          <h3 class="text-3xl font-bold">
-            SPH<span class="text-blue">.</span>
-          </h3>
-          <div>Software Engineer</div>
-          <div>2016.02 - 2016.12</div>
-        </div>
-        <div class="w-3/5">
+
+      <div class="section">
+        <h2 class="text-5xl font-bold pb-24">
+          Other experiences<span class="text-blue">.</span>
+        </h2>
+
+        <div class="w-full flex flex-col">
           <h3 class="text-3xl font-bold pb-3">
-            Google Maps 파트너<span class="text-blue">.</span>
+            Nexters<span class="text-blue">.</span>
           </h3>
-          <div>2016.02 - 2016.12</div>
-          <h4 class="text-xl font-bold py-3">Description</h4>
-          <div>
-            국내 대기업의 Google maps 이용 회사의 적용을 돕거나, 회사 blog
-            포스팅, Google Korea 본사 세미나실에서 신규 web, android 기술
-            전파에 공헌하였습니다.
-          </div>
+          <div>Developer part</div>
+          <div>2018</div>
 
-          <h4 class="text-xl font-bold pt-5 pb-3">주 사용 기술</h4>
-          <div>Javascript, Android (Java), jQuery, Firebase</div>
-          <div>geofence api, awareness api, place api, etc.</div>
-
-          <h3 class="text-3xl font-bold pt-16 pb-3">
-            Supermap 파트너<span class="text-blue">.</span>
-          </h3>
-          <div>2016.02 - 2016.12</div>
-          <h4 class="text-xl font-bold py-3">Description</h4>
-          <p>
-            중국 GIS 회사인 Supermap 파트너로서 국내 공공기관 웹서비스에
-            Geometry(공간정보), Geofence 설정 등 GIS 기술을 적용하는데
-            Supermap 솔루션을 도입했습니다.
+          <br />
+          <br />
+          <p class="text-lg py-4">
+            Nexters는 직장인과 대학생들이 모여 소규모 프로젝트를 진행하는
+            대외활동입니다. 저는 직장인으로 참여하며 대학생들과 함께 약속 중간
+            지점을 찾아주는 애플리케이션 개발에 기여하였습니다. Nexters 활동으로
+            여러 회사의 개발자들과 대화하고 꿈을 찾는 대학생들과 교류하며,
+            개발자로서 조금 더 큰 목표를 갖게 된 계기가 되었습니다.
           </p>
-          <h4 class="text-xl font-bold pt-5 pb-3">주 사용 기술</h4>
-          <div>banila JS, Android (Java), jQuery</div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="w-full flex flex-col">
+          <h3 class="text-3xl font-bold pb-3">
+            sGen Club<span class="text-blue">.</span>
+          </h3>
+          <div>Developer position</div>
+          <div>2014.07 - 2016.07</div>
+
+          <p class="text-lg py-4">
+            sGen Club은 삼성 SDS에서 주관하는 대외활동입니다. 기획자, 디자이너,
+            개발자가 모여 6개월 단위로 프로젝트를 진행합니다. 기획자, 디자이너와
+            협업하며 소통의 중요성을 배웠으며, 실력 있는 친구들과 교류하며 4회의
+            프로젝트를 진행하는 동안 3회 수상하였습니다. 이 때 만들었던
+            솔루션으로는, O2O 매장 솔루션, TV를 보며 채팅하는 체온, 아로마
+            테라피를 인공지능을 통해 제안하는 아로미 등이 있습니다.
+          </p>
+        </div>
+        <div class="divider"></div>
+
+        <div class="w-full flex flex-col">
+          <h3 class="text-3xl font-bold pb-3">
+            SK Hynix 영하이라이터<span class="text-blue">.</span>
+          </h3>
+          <div>Reporter</div>
+          <div>2013</div>
+
+          <div class="text-lg py-4">
+            글 쓰는 걸 좋아해서, 전공과 글쓰기를 함께할 수 있는 활동을
+            찾게되었습니다. SK Hynix 영하이라이터 활동을 통해 애니메이션 트렌드,
+            반도체 관련 지식, SK Hynix 회사소개 등 다방면의 글쓰기 활동을
+            진행하였습니다. 개발자는 개발 역량 외에도 개발자 또는 개발자 외
+            직군의 사람들에게 표현을 잘 할 후 있어야 한다고 믿습니다. 이 때 배운
+            글쓰기 방법은 어떤 기술을 글을 통해 설명하거나 설득할 때 도움이 되고
+            있습니다.
+          </div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="w-full flex flex-col">
+          <h3 class="text-3xl font-bold pb-3">
+            Microsoft Student Partners<span class="text-blue">.</span>
+          </h3>
+          <div>Developer position</div>
+          <div>2009.03 - 2016.02</div>
+
+          <div class="text-lg py-4">
+            MSP는 마이크로소프트에서 주관하는 대외활동으로 학생 디자이너와
+            개발자가 1년여간 활동합니다. Microsoft 직원들과 다양한 IT 관련
+            활동을 하였습니다.
+          </div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="w-full flex flex-col">
+          <h3 class="text-3xl font-bold pb-3">
+            인천대학교<span class="text-blue">.</span>
+          </h3>
+          <div>임베디드시스템공학과</div>
+          <div>2009.03 - 2016.02</div>
+
+          <div class="text-lg py-1">
+            임베디드시스템공학과에서 4년간 수학했습니다. 주로 전자공학과
+            마이크로컨트롤러 프로그래밍을 학습했으며 컴퓨터의 구조를 이해하는데
+            도움이 되었습니다.
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="section">
-      <h2 class="text-5xl font-bold pb-24">
-        Other experiences<span class="text-blue">.</span>
-      </h2>
-
-      <div class="w-full flex flex-col">
-        <h3 class="text-3xl font-bold pb-3">
-          Nexters<span class="text-blue">.</span>
-        </h3>
-        <div>Developer part</div>
-        <div>2018</div>
-
-        <p class="text-lg py-4">
-          Nexters는 직장인과 대학생들이 모여 소규모 프로젝트를 진행하는
-          대외활동입니다. 저는 직장인으로 참여하며 대학생들과 함께 약속 중간
-          지점을 찾아주는 애플리케이션 개발에 기여하였습니다. Nexters 활동으로
-          여러 회사의 개발자들과 대화하고 꿈을 찾는 대학생들과 교류하며,
-          개발자로서 조금 더 큰 목표를 갖게 된 계기가 되었습니다.
-        </p>
-      </div>
-      <div class="divider"></div>
-
-      <div class="w-full flex flex-col">
-        <h3 class="text-3xl font-bold pb-3">
-          sGen Club<span class="text-blue">.</span>
-        </h3>
-        <div>Developer position</div>
-        <div>2014.07 - 2016.07</div>
-
-        <p class="text-lg py-4">
-          sGen Club은 삼성 SDS에서 주관하는 대외활동입니다. 기획자, 디자이너,
-          개발자가 모여 6개월 단위로 프로젝트를 진행합니다. 기획자, 디자이너와
-          협업하며 소통의 중요성을 배웠으며, 실력 있는 친구들과 교류하며 4회의
-          프로젝트를 진행하는 동안 3회 수상하였습니다. 이 때 만들었던
-          솔루션으로는, O2O 매장 솔루션, TV를 보며 채팅하는 체온, 아로마
-          테라피를 인공지능을 통해 제안하는 아로미 등이 있습니다.
-        </p>
-      </div>
-      <div class="divider"></div>
-
-      <div class="w-full flex flex-col">
-        <h3 class="text-3xl font-bold pb-3">
-          SK Hynix 영하이라이터<span class="text-blue">.</span>
-        </h3>
-        <div>Reporter</div>
-        <div>2013</div>
-
-        <div class="text-lg py-4">
-          글 쓰는 걸 좋아해서, 전공과 글쓰기를 함께할 수 있는 활동을
-          찾게되었습니다. SK Hynix 영하이라이터 활동을 통해 애니메이션 트렌드,
-          반도체 관련 지식, SK Hynix 회사소개 등 다방면의 글쓰기 활동을
-          진행하였습니다. 개발자는 개발 역량 외에도 개발자 또는 개발자 외
-          직군의 사람들에게 표현을 잘 할 후 있어야 한다고 믿습니다. 이 때 배운
-          글쓰기 방법은 어떤 기술을 글을 통해 설명하거나 설득할 때 도움이 되고
-          있습니다.
-        </div>
-      </div>
-      <div class="divider"></div>
-
-      <div class="w-full flex flex-col">
-        <h3 class="text-3xl font-bold pb-3">
-          Microsoft Student Partners<span class="text-blue">.</span>
-        </h3>
-        <div>Developer position</div>
-        <div>2009.03 - 2016.02</div>
-
-        <div class="text-lg py-4">
-          MSP는 마이크로소프트에서 주관하는 대외활동으로 학생 디자이너와
-          개발자가 1년여간 활동합니다. Microsoft 직원들과 다양한 IT 관련
-          활동을 하였습니다.
-        </div>
-      </div>
-      <div class="divider"></div>
-
-      <div class="w-full flex flex-col">
-        <h3 class="text-3xl font-bold pb-3">
-          인천대학교<span class="text-blue">.</span>
-        </h3>
-        <div>임베디드시스템공학과</div>
-        <div>2009.03 - 2016.02</div>
-
-        <div class="text-lg py-4">
-          임베디드시스템공학과에서 4년간 수학했습니다. 주로 전자공학과
-          마이크로컨트롤러 프로그래밍을 학습했으며 컴퓨터의 구조를 이해하는데
-          도움이 되었습니다.
-        </div>
-      </div>
-      <div class="divider"></div>
-    </div>
-  </div>
-<script type="text/javascript" src="main.60dd34fff602fbac75ec.js"></script></body>
-
+  </body>
 </html>
